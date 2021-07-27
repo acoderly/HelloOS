@@ -1,0 +1,11 @@
+CCSTR = 'CC -[M] Building...' $<
+PRINNTCSTR = @echo $(CCSTR)
+
+%.o : $(CCBUILDPATH)%.asm
+	$(ASM) $(ASM_FLAGS) -o $@ $<
+	@echo 'AS -[M] Building...' $<
+
+%.o : $(CCBUILDPATH)%.c
+	$(CC) $(BTCFLAGS) -o $@ $<
+	$(PRINNTCSTR)
+

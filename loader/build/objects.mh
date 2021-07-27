@@ -1,0 +1,20 @@
+HEAD_OBJS :=
+HEAD_LINK :=
+HEAD_OBJS += inithead.o head.o vgastr.o
+HEAD_LINK += $(HEAD_OBJS)
+HEAD_ELF = head.elf 
+HEAD := head.bin
+
+LOADER_OBJS := 
+LOADER_LINK := 
+LOADER_OBJS += initloader.o loader.o fs.o cpu_mem_info.o vgastr.o machbootinfo.o
+LOADER_LINK += $(LOADER_OBJS)
+LOADER_ELF = loader.elf 
+LOADER :=loader.bin
+
+REALMODEFUNC_OBJS :=
+REALMODEFUNC_LINK :=
+REALMODEFUNC_OBJS += realmodefunc.o
+REALMODEFUNC_LINK += $(REALMODEFUNC_OBJS)
+REALMODEFUNC_ELF = realmodefunc.elf
+REALMODEFUNC = realmodefunc.bin
